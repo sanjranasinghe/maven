@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     DOCKER_USERNAME: "nusanj"
-    IMAGE_NAME: "MyMavenApp"
+    IMAGE_NAME: "mymavenapp"
     IMAGE_TAG: "v1"
   
 
