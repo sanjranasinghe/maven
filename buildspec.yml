@@ -5,14 +5,13 @@ env:
     DOCKER_USERNAME: "nusanj"
     IMAGE_NAME: "MyMavenApp"
     IMAGE_TAG: "v1"
-  parameter-store:
-    DOCKER_PASSWORD: "Nuribaba@123"
+  
 
 phases:
   pre_build:
     commands:
       - echo logging in to Docker hub
-      - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      - docker login -u $DOCKER_USERNAME -p Nuribaba@123
   build: 
     commands:
       - echo build started on 'date'
@@ -20,7 +19,7 @@ phases:
       - docker build -t $IMAGE_NAME:$IMAGE_TAG .
       - docker tag $IMAGE_NAME:$IMAGE_TAG $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
 
-  post_build:
+  post-build:
     commands:
       - echo build complete 'date'
       - echo pushing docker image...
