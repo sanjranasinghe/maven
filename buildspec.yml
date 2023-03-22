@@ -19,7 +19,7 @@ phases:
       - docker build -t $IMAGE_NAME:$IMAGE_TAG .
       - docker tag $IMAGE_NAME:$IMAGE_TAG $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
 
-  post-build:
+  post_build:
     commands:
       - echo build complete 'date'
       - echo pushing docker image...
