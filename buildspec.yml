@@ -15,5 +15,5 @@ phases:
     - mvn package
 artifacts:
   files:
-  - bike-service-0.0.1-SNAPSHOT.war
-  - .ebextensions/**/*
+  - target/SampleMavenTomcatApp.war
+  - scripts/*
