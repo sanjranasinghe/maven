@@ -14,7 +14,7 @@ phases:
   post_build:
     commands:
       - echo "Build completed on `date`"
-      - aws s3 cp target/myapp.jar s3://my-bucket/
+      - aws s3 cp target/MyMavenApp.jar s3://sanjaya-codebuild/Mypath/
 
 artifacts:
   files:
