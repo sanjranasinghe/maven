@@ -16,6 +16,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>MyMavenApp</finalName>
+    <finalName>mymavenapp</finalName>
   </build>
 </project>
