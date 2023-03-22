@@ -12,8 +12,8 @@ phases:
   post_build:
     commands:
     - echo Build completed on `date`
-    - mvn package
+    - mvn clean install
 artifacts:
   files:
   - SampleMavenTomcatApp.war
-  - scripts/*
+  
