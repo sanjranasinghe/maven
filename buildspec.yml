@@ -13,8 +13,3 @@ phases:
     commands:
     - echo Build completed on `date`
     - mvn package
-    - mv target/MyMavenApp.jar MyMavenApp.jar
-artifacts:
-  files:
-  - MyMavenApp.jar
-  - .ebextensions/**/*
