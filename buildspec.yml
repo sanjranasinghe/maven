@@ -15,5 +15,5 @@ phases:
     - mvn package
 artifacts:
   files:
-  - java-example/target/SampleMavenTomcatApp.war
+  - MyPath/SampleMavenTomcatApp.war
   - scripts/*
