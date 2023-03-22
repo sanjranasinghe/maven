@@ -15,5 +15,5 @@ phases:
     - mvn clean install
 artifacts:
   files:
-  - target/SampleMavenTomcatApp.war
+  - target/MyMavenApp.jar
   
