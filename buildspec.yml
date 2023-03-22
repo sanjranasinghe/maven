@@ -1,15 +1,27 @@
 version: 0.2
+
+env:
+  variables:
+    DOCKER_USERNAME: "nusanj"
+    IMAGE_NAME: "MyMavenApp"
+    IMAGE_TAG: "v1"
+  parameter-store:
+    DOCKER_PASSWORD: "Nuribaba@123"
+
 phases:
-  install:
-    runtime-versions:
-      java: corretto8
   pre_build:
     commands:
-    - echo In the pre_build phase...
-  build:
+      - echo logging in to Docker hub
+      - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  build: 
     commands:
-    - echo Build started on `date`
-  post_build:
+      - echo build started on 'date'
+      - echo Building docker image...
+      - docker build -t $IMAGE_NAME:$IMAGE_TAG .
+      - docker tag $IMAGE_NAME:$IMAGE_TAG $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
+
+  post-build:
     commands:
-    - echo Build completed on `date`
-    - mvn package
+      - echo build complete 'date'
+      - echo pushing docker image...
+      - docker push $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
