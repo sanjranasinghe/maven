@@ -1,19 +1,21 @@
 version: 0.2
+
 phases:
   install:
     runtime-versions:
       java: corretto8
   pre_build:
     commands:
-    - echo In the pre_build phase...
+      - echo "Starting build..."
+      - mvn clean
   build:
     commands:
-    - echo Build started on `date`
+      - mvn package
   post_build:
     commands:
-    - echo Build completed on `date`
-    - mvn clean install
+      - echo "Build completed on `date`"
+      - aws s3 cp target/myapp.jar s3://my-bucket/
+
 artifacts:
   files:
-  - target/MyMavenApp.jar
-  
+    - target/myapp.jar
